@@ -1,5 +1,5 @@
 ﻿Console.WriteLine("Hi there. Welcome to Dig-in");
-Console.WriteLine("Type (W) to write a new recipe");
+Console.WriteLine("Type (W) to write a new recipe or [L] to list the current available recept" );
 
 int num1;
 
