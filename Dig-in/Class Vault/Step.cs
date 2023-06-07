@@ -8,7 +8,6 @@ namespace Dig_in
 {
     public class Step
     {
-
         public int step { get; set; }
         public string instruction { get; set; }
     }

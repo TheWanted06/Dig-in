@@ -1,5 +1,58 @@
-﻿Console.WriteLine("Hi there. Welcome to Dig-in");
-Console.WriteLine("Type (W) to write a new recipe or [L] to list the current available recept" );
+﻿using Dig_in;
+
+Console.WriteLine("Hi there. Welcome to Dig-in");
+
+Console.WriteLine("Type [W] to write a new recipe or [L] to list the current available recepts" );
+string input1 = Console.ReadLine();
+
+Recipe[] recipes;
+if ( input1 == "W" || input1 == "w")
+{
+
+}
+else
+{
+
+}
+
+Recipe AddRecipe()
+{
+    Recipe recipe = new Recipe();
+
+    Console.WriteLine("Please enter the Name of Recipe");
+    string name = Console.ReadLine();
+    recipe.Name = name;
+
+    Console.WriteLine("Please enter the number of ingredients");
+    string Ingrd = Console.ReadLine();
+    int numIngrd = Convert.ToInt32(Ingrd);
+    recipe.ingediants.Capacity = numIngrd;
+    for (int i = 0; i < numIngrd; i++)
+    {
+        recipe.ingediants.Add(AddIngredient);
+    }
+
+
+    Console.WriteLine("How many steps does this recipe require?");
+    string steps = Console.ReadLine() ;
+    int numSteps = Convert.ToInt32(steps); 
+    recipe.steps.Capacity = numSteps;
+    for (int j = 0; j < numSteps; j++)
+    {
+        recipe.steps.Add(AddStep);
+    }
+
+    return recipe;
+
+}
+Ingredient AddIngredient()
+{
+    Ingredient ingredient = new Ingredient();
+
+    return ingredient;
+}
+
+
 
 int num1;
 

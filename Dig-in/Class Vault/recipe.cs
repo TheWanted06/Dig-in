@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dig_in
 {
-    public class recipe
+    public class Recipe
     {
 
         public string Name { get; set; }
