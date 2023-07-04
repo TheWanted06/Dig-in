@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dig-in", "Dig-in\Dig-in.csproj", "{57AD9F18-A11F-4C63-A28C-D57F50321347}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dig-in", "Dig-in\Dig-in.csproj", "{57AD9F18-A11F-4C63-A28C-D57F50321347}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Just Dig-in", "Just Dig-in\Just Dig-in.csproj", "{C888D57D-01C6-4B0C-96DF-68B7907CFF5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{57AD9F18-A11F-4C63-A28C-D57F50321347}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57AD9F18-A11F-4C63-A28C-D57F50321347}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57AD9F18-A11F-4C63-A28C-D57F50321347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C888D57D-01C6-4B0C-96DF-68B7907CFF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C888D57D-01C6-4B0C-96DF-68B7907CFF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C888D57D-01C6-4B0C-96DF-68B7907CFF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C888D57D-01C6-4B0C-96DF-68B7907CFF5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

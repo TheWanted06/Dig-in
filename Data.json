@@ -1,0 +1,30 @@
+{
+    "recipes": [
+        {
+            "Name": "Sweet Water",
+            "ingediants": [
+                {
+                    "name": "Water",
+                    "UOM": "ml",
+                    "Quantity": 0,
+                    "Calories": 0,
+                    "Food_Group": 6
+                },
+                {
+                    "name": "Suger",
+                    "UOM": "mg",
+                    "Quantity": 100,
+                    "Calories": 20,
+                    "Food_Group": 6
+                }
+            ],
+            "steps": [
+                {
+                    "step": 1,
+                    "instruction": "Mix sugar and Water together"
+                }
+            ],
+            "TotalCalories": 20
+        }
+    ]
+}

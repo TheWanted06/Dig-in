@@ -1,24 +1,44 @@
 ﻿using Dig_in;
+using Dig_in.Class_Vault;
 
 Console.WriteLine("Hi there. Welcome to Dig-in");
 
 Console.WriteLine("Type [W] to write a new recipe or [L] to list the current available recepts" );
 string input1 = Console.ReadLine();
 
-List<Recipe> recipes = new List<Recipe>();
-while(input1 != null && input1 != "L")
+CookBook book = new CookBook();
+book.recipes = new List<Recipe>();
+//List<Recipe> recipes = new List<Recipe>();
+while(input1 != null )
 {
-    recipes.Add(AddRecipe());
+    if(input1 == "w" || input1 == "W")
+    {
+        book.recipes.Add(AddRecipe());
+        Dig_in.Class_Vault.Convert.Convert_to_json(book);
+
+    }
+    else if(input1 == "L" || input1 == "l")
+    {
+        NewDisplay();
+    }
+    else
+    {
+        input1 = null;
+    }
+    
     Console.WriteLine("Type [W] to write a new recipe or [L] to list the current available recepts");
     input1 = Console.ReadLine();
 }
-if(input1 == "L")
-{
-    NewDisplay(recipes);
-}
 
-void NewDisplay(List<Recipe> recipes)
+
+
+void NewDisplay()
 {
+    CookBook newBook = new CookBook();
+    newBook = Dig_in.Class_Vault.Convert.Convert_to_object();
+
+    List<Recipe> recipes = new List<Recipe>();
+    recipes = newBook.recipes;
     recipes.Sort();
     int num = recipes.Count;
     int i = 1;
@@ -55,18 +75,23 @@ Recipe AddRecipe()
 
     Console.WriteLine("\nPlease enter the number of ingredients");
     string Ingrd = Console.ReadLine();
-    int numIngrd = Convert.ToInt32(Ingrd);
+    int numIngrd = System.Convert.ToInt32(Ingrd);
     //recipe.ingediants.Capacity = numIngrd;
+
+    recipe.ingediants = new List<Ingredient>();
     for (int i = 0; i < numIngrd; i++)
     {
-        recipe.ingediants.Add(AddIngredient());
+        Ingredient ingred = AddIngredient();
+        recipe.ingediants.Add(ingred); 
+        //recipe.ingediants.Add(AddIngredient(ingred));
     }
 
 
     Console.WriteLine("How many steps does this recipe require?");
     string steps = Console.ReadLine() ;
-    int numSteps = Convert.ToInt32(steps); 
-    recipe.steps.Capacity = numSteps;
+    int numSteps = System.Convert.ToInt32(steps); 
+    //recipe.steps.Capacity = numSteps;
+    recipe.steps = new List<Step>();
     for (int j = 0; j < numSteps; j++)
     {
         Step step = AddSteps(j);
@@ -91,11 +116,11 @@ Ingredient AddIngredient()
     ingredient.UOM = uom;
 
     Console.WriteLine("What is the quantity used");
-    int Qnt = Convert.ToInt32(Console.ReadLine()); 
+    int Qnt = System.Convert.ToInt32(Console.ReadLine()); 
     ingredient.Quantity =  Qnt;
 
     Console.WriteLine("How many calories does it have?");
-    int Cal = Convert.ToInt32(Console.ReadLine());
+    int Cal = System.Convert.ToInt32(Console.ReadLine());
     ingredient.Quantity = Cal;
 
     Console.WriteLine("Which food group does it belong to? Type\n" +
@@ -105,7 +130,7 @@ Ingredient AddIngredient()
         "4 for Grains\n" +
         "5 for Proteins\n" +
         "6 for Fats and Oils ");
-    int foodtype = Convert.ToInt32(Console.ReadLine());
+    int foodtype = System.Convert.ToInt32(Console.ReadLine());
     switch(foodtype)
     {
         case 1:
